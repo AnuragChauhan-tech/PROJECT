@@ -1,23 +1,20 @@
 #ifndef STUDENT_H
 #define STUDENT_H
 
+#define MAX_SUBJECTS 5
+#define NAME_LEN 40
+
 typedef struct {
     int roll;
-    char name[40];
-    float marks[5];
+    char name[NAME_LEN];
+    float marks[MAX_SUBJECTS];
     float total;
     float percentage;
     char grade;
 } Student;
 
-// core function
 void addStudent();
 void displayStudents();
-void searchStudent();
-void updateStudent();
-void deleteStudent();
+void calculateResult(Student *student);
 
-// helper
-void calculateResult(Student* student);
-
-#endif
+#endif /* STUDENT_H */
